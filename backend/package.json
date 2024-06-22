@@ -22,7 +22,9 @@
     "passport": "^0.7.0"
   },
   "devDependencies": {
+    "@types/connect-mongodb-session": "^2.4.7",
     "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.0",
     "eslint": "^9.5.0"
   }
 }
