@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs/dist/bcrypt";
+import bcrypt from "bcryptjs";
 import { GraphQLLocalStrategy } from "graphql-passport";
 import User from "models/user.model";
 import passport from "passport";
