@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Specifies the ECMAScript target version (ES6)
+    "module": "commonjs", // Specifies the module system (commonjs for Node.js)
+    "moduleResolution": "node", // Ensures module resolution is node-style
+    "baseUrl": ".", // Base directory for resolving non-relative module names
+    "paths": {
+      "*": ["node_modules/*"] // Allow node_modules to be resolved
+    },
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "esModuleInterop": true // Ensures compatibility with ES modules
+  },
+  "exclude": [
+    "node_modules", // Exclude the node_modules directory
+    "**/*.spec.ts" // Exclude test files if you're using TypeScript for tests
+  ]
+}
