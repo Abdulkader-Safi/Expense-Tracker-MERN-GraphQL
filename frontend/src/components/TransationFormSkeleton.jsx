@@ -18,4 +18,5 @@ const TransactionFormSkeleton = () => {
     </div>
   );
 };
+
 export default TransactionFormSkeleton;

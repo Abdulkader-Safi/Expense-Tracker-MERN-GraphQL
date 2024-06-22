@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   const authUser = true;
+
   return (
     <>
       {authUser && <Header />}
