@@ -23,8 +23,9 @@ const userResolver = {
       }
     },
   },
+
   Mutation: {
-    signUp: async (_, { input }) => {
+    signUp: async (_, { input }, context) => {
       try {
         const { username, name, password, gender } = input;
         if (!username || !name || !password || !gender) {
@@ -94,6 +95,7 @@ const userResolver = {
       }
     },
   },
+
   User: {
     transactions: async (parent) => {
       try {
