@@ -42,7 +42,7 @@ app.use(
       httpOnly: true, // this option prevents the cross-site scripting (XSS) attacks
     },
     store: store,
-  })
+  }),
 );
 
 app.use(passport.initialize());
@@ -57,7 +57,7 @@ const server = new ApolloServer({
 await server.start();
 
 app.use(
-  "/",
+  "/graphql",
   cors({
     origin: "http://localhost:5173",
     credentials: true,
@@ -65,7 +65,7 @@ app.use(
   express.json(),
   expressMiddleware(server, {
     context: async ({ req, res }) => buildContext({ req, res }),
-  })
+  }),
 );
 
 await new Promise((r) => httpServer.listen({ port: 4000 }, r));
