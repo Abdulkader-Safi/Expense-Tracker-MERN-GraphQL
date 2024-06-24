@@ -12,10 +12,11 @@ import session from "express-session";
 
 import { buildContext } from "graphql-passport";
 import passport from "passport";
-import { configurePassport } from "passport/passport.config.js";
+
 import { connectDB } from "./db/connectDB.js";
 import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
+import { configurePassport } from "./passport/passport.config.js";
 
 dotenv.config();
 configurePassport();

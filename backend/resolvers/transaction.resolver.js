@@ -1,9 +1,9 @@
-import Transaction from "models/transaction.model.js";
-import User from "models/user.model.js";
+import Transaction from "../models/transaction.model.js";
+import User from "../models/user.model.js";
 
 const transactionResolver = {
   Query: {
-    transactions: async (_, _, context) => {
+    transactions: async (_, __, context) => {
       try {
         if (!context.getUser()) {
           throw new Error("Unauthorized");
@@ -49,13 +49,9 @@ const transactionResolver = {
 
     updateTransaction: async (_, { input }) => {
       try {
-        const updatedTransaction = await Transaction.findByIdAndUpdate(
-          input.transactionId,
-          input,
-          {
-            new: true,
-          },
-        );
+        const updatedTransaction = await Transaction.findByIdAndUpdate(input.transactionId, input, {
+          new: true,
+        });
 
         return updatedTransaction;
       } catch (error) {
@@ -66,8 +62,7 @@ const transactionResolver = {
 
     deleteTransaction: async (_, { transactionId }) => {
       try {
-        const deletedTransaction =
-          await Transaction.findByIdAndDelete(transactionId);
+        const deletedTransaction = await Transaction.findByIdAndDelete(transactionId);
         return deletedTransaction;
       } catch (err) {
         console.error("Error deleting transaction:", err);
